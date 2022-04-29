@@ -1,0 +1,14 @@
+lst = input()
+string1 = [int(item) for item in lst.split()]
+string2 = []
+
+for i in range(0, len(string1)):
+  if len(string1) == 1:
+    print(''.join(map(str, string1)))
+  elif i == 0:
+    string2.append(string1[-1] + string1[1])
+  elif i == len(string1) -1:
+    string2.append(string1[-2] + string1[0])
+  else:
+    string2.append(string1[i-1] + string1[i+1])
+print(' '.join(str(n) for n in string2))
