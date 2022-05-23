@@ -1,0 +1,13 @@
+lst = input()
+string1 = sorted([int(item) for item in lst.split()])
+string3 = []
+
+for i in range(len(string1)):
+  try:
+    if string1[i] == string1[i + 1] and string1[i] not in string3:
+      string3.append(string1[i])
+    else:
+      continue
+  except IndexError:
+    pass
+print(' '.join(str(n) for n in string3))
